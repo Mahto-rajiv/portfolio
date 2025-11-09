@@ -12,14 +12,14 @@ const Hero = () => (
 
       <div className="flex flex-wrap justify-center gap-4 mb-8">
         <a
-          href="src/assets/Rajiv_Mahto.pdf"
+          href="/assets/Rajiv Mahto.pdf"
           className="px-6 py-3 bg-white border-2 border-gray-800 text-gray-800 rounded-full hover:bg-gray-800 hover:text-white transition-all"
           target="_blank"
         >
           View Resume
         </a>
         <a
-          href="src/assets/Rajiv_Mahto.pdf"
+          href="/assets/Rajiv Mahto.pdf"
           download
           className="px-6 py-3 bg-gray-800 text-white rounded-full hover:bg-gray-900 transition-all"
         >
