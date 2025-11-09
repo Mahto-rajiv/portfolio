@@ -13,10 +13,10 @@ const ProjectCard = ({ project }) => {
             {highlightText(project.description, project.highlightTerms || [])}
           </p>
 
-          <h4 className="font-semibold text-gray-900 mb-3">TechStack Used</h4>
+          <h4 className="font-bold text-gray-900 mb-3">TechStack Used</h4>
           <div className="flex flex-wrap gap-2 mb-6">
             {project.tech.map((tech) => (
-              <span key={tech} className="px-3 py-1 bg-gray-100 rounded-full text-sm font-medium text-gray-700">
+              <span key={tech} className="px-3 py-1 rounded-full text-sm font-bold bg-black text-white">
                 {tech}
               </span>
             ))}
