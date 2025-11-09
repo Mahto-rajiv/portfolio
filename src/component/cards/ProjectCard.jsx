@@ -32,7 +32,7 @@ const ProjectCard = ({ project }) => {
             {project.live && (
               <a href={project.live} target="_blank" className="flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-900 rounded-lg shadow-sm hover:bg-gray-200 transition-colors">
                 <ExternalLink className="w-4 h-4" />
-                Details
+                Live
               </a>
             )}
           </div>
