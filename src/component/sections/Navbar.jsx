@@ -36,7 +36,7 @@ const Navbar = ({ activeSection, isMenuOpen, setIsMenuOpen }) => {
 
       {isMenuOpen && (
         <div className="md:hidden bg-white border-t">
-          <div className="px-4 py-4 space-y-3">
+          <div className="px-4 py-4 space-y-3 flex flex-col items-center text-center">
             {['About', 'Skills', 'Experience', 'Projects', 'Contact'].map((item) => (
               <a
                 key={item}
