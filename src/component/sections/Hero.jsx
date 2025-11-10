@@ -5,7 +5,7 @@ const Hero = () => (
   <section id="profile" className="pt-24 pb-16 px-4">
     <div className="max-w-4xl mx-auto text-center">
       <p className="text-gray-600 mb-2">Hello, I'm</p>
-      <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
+      <h1 className="inline-block text-5xl md:text-6xl font-bold mb-4 leading-[1.2] pb-2 bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
         Rajiv Mahto
       </h1>
       <p className="text-2xl text-gray-700 mb-8">Software Developer</p>
