@@ -2,7 +2,7 @@ export const experiences = [
   {
     company: 'X-Byte Technolabs Pvt Ltd.',
     role: 'Python Developer',
-    duration: 'May 2024 - Oct 2025',
+    duration: 'May 2024 - Nov 2025',
     highlights: [
     "As a Python Developer at X-Byte Technolabs Pvt. Ltd (May 2024 – Oct 2025), I specialized in building and scaling web scraping, automation, and internal dashboard systems that streamlined data operations and improved system efficiency. My work involved architecting resilient scraping pipelines, backend APIs, and frontend monitoring tools integrated across teams for production-grade deployment.",
     "Web Scraping & Automation:Engineered large-scale scraping frameworks using Python, Selenium, and Requests, optimizing proxy rotation, scheduling, and validation for reliable, high-volume data extraction.",
