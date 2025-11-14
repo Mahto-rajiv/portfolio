@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rajiv-portfolio-dev.vercel.app/sitemap.xml
+Sitemap: https://rajiv-portfolio-dusky.vercel.app/sitemap.xml
