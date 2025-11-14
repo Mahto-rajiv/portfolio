@@ -17,7 +17,7 @@ export const projects = [
     description: 'Developed a Django-based social media platform enabling users to create, like, comment, and save tweets, with a follow/unfollow system and real-time notifications for activities like new followers, unfollowing, and tweet interactions. Built a secure authentication system with registration, login, logout, password reset, and profile management for updating profiles, uploading pictures, and managing tweets. Added media uploads for tweets and profile images to ensure a rich user experience. Enhanced interactivity with a modern UI, Bootstrap styling, and dynamic Toast Messages for real-time feedback (e.g., login success, new comments, likes, or errors).',
     images: ['tweet_home.png', 'tweet_profile.png'],
     tech: ['Python', 'Django', 'JavaScript', 'Bootstrap', 'SQLite3'],
-    github: 'https://github.com/Mahto-rajiv/Thought-Exchanger-Tweet',
+    github: 'https://github.com/Mahto-rajiv/thought-exchanger-tweet',
     highlightTerms: ['Django', 'authentication', 'password reset', 'Bootstrap', 'Toast Messages']
   },
   {
@@ -27,5 +27,14 @@ export const projects = [
     tech: ['React', 'Node.js', 'Socket.io', 'Express.js', 'JWT', 'Redis', 'WebContainer API', 'TailwindCSS'],
     github: 'https://github.com/Mahto-rajiv/Basic-Ai-Agent',
     highlightTerms: ['real-time', 'JWT', 'Redis', 'WebContainer API', 'live code execution']
+  },
+  {
+    title: 'JavaScript and DOM Projects',
+    description: 'This is a JavaScript-based project where I showcase my JavaScript skills through various mini-projects. It includes features like dynamic user cards, a news web app, a weather finder, a to-do list with local storage, a stopwatch, an image carousel, and more.',
+    images: ['rcenter.png'],
+    tech: ['JavaScript', 'JavaScript', 'CSS', 'DOM', 'External APIS', 'Web LocalStorage', 'GitHub'],
+    github: 'https://github.com/Mahto-rajiv/javascript-projects',
+    live: 'https://mahto-rajiv.github.io/javascript-projects/',
+    highlightTerms: ['JavaScript-based', 'JavaScript', 'dynamic user cards', 'news web app', 'weather finder', 'to-do list with local storage', 'stopwatch', 'image carousel']
   }
 ];
