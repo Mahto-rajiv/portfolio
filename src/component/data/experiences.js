@@ -4,7 +4,7 @@ export const experiences = [
     role: 'Python Developer',
     duration: 'May 2024 - Nov 2025',
     highlights: [
-    "As a Python Developer at X-Byte Enterprise Crawling (May 2024 – Oct 2025), I specialized in building and scaling web scraping, automation, and internal dashboard systems that streamlined data operations and improved system efficiency. My work involved architecting resilient scraping pipelines, backend APIs, and frontend monitoring tools integrated across teams for production-grade deployment.",
+    "As a Python Developer at X-Byte Technolabs Pvt Ltd (May 2024 – Oct 2025), I specialized in building and scaling web scraping, automation, and internal dashboard systems that streamlined data operations and improved system efficiency. My work involved architecting resilient scraping pipelines, backend APIs, and frontend monitoring tools integrated across teams for production-grade deployment.",
     "Web Scraping & Automation:Engineered large-scale scraping frameworks using Python, Selenium, and Requests, optimizing proxy rotation, scheduling, and validation for reliable, high-volume data extraction.",
     "Dashboard & Analytics Development:Built Django + React-based dashboards and DRF-powered analytics views to monitor scraping jobs, visualize real-time metrics, and manage workflows — improving efficiency by 60%.",
     "Automation & Cloud Integration:Automated data pipelines with logging, notifications, and RBAC, and deployed real-time scraping APIs on AWS Lambda, achieving 40% faster execution.",
