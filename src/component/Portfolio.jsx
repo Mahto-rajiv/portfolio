@@ -1,34 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import Navbar from './sections/Navbar';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import SkillsSection from './sections/Skills';
-import ExperienceSection from './sections/Experience';
-import ProjectsSection from './sections/Projects';
-import EducationSection from './sections/Education';
-import ContactSection from './sections/Contact';
-import FooterSection from './sections/Footer';
-import { FaAws } from "react-icons/fa6";
-import {
-  SiPython,
-  SiJavascript,
-  SiDjango,
-  SiFastapi,
-  SiHtml5,
-  SiCss3,
-  SiTailwindcss,
-  SiReact,
-  SiBootstrap,
-  SiMongodb ,
-  SiMysql,
-  SiRedis,
-  SiGithub,
-  SiGitlab,
-  SiScrapy,
-  SiN8N,
-  SiDocker,
-  SiPostman
-} from 'react-icons/si';
+
+// Lazy load below-fold sections for faster initial load
+const ExperienceSection = lazy(() => import('./sections/Experience'));
+const ProjectsSection = lazy(() => import('./sections/Projects'));
+const EducationSection = lazy(() => import('./sections/Education'));
+const ContactSection = lazy(() => import('./sections/Contact'));
+const FooterSection = lazy(() => import('./sections/Footer'));
+
+// Loading fallback for lazy sections
+const SectionLoader = () => (
+  <div className="py-16 flex justify-center">
+    <div className="animate-pulse text-gray-400">Loading...</div>
+  </div>
+);
 
 const Portfolio = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -60,29 +48,35 @@ const Portfolio = () => {
       {/* Navigation */}
       <Navbar activeSection={activeSection} isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
 
-      {/* Hero Section */}
+      {/* Hero Section - Above fold, load immediately */}
       <Hero />
 
-      {/* About Section */}
+      {/* About Section - Above fold, load immediately */}
       <About />
 
-      {/* Skills Section */}
+      {/* Skills Section - Important, load immediately */}
       <SkillsSection />
 
-      {/* Experience Section */}
-      <ExperienceSection />
+      {/* Below-fold sections - Lazy loaded */}
+      <Suspense fallback={<SectionLoader />}>
+        <ExperienceSection />
+      </Suspense>
 
-      {/* Projects Section */}
-      <ProjectsSection />
+      <Suspense fallback={<SectionLoader />}>
+        <ProjectsSection />
+      </Suspense>
 
-      {/* Education Section */}
-      <EducationSection />
+      <Suspense fallback={<SectionLoader />}>
+        <EducationSection />
+      </Suspense>
 
-      {/* Contact Section */}
-      <ContactSection />
+      <Suspense fallback={<SectionLoader />}>
+        <ContactSection />
+      </Suspense>
 
-      {/* Footer */}
-      <FooterSection />
+      <Suspense fallback={<SectionLoader />}>
+        <FooterSection />
+      </Suspense>
     </div>
   );
 };

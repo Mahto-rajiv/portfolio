@@ -1,10 +1,378 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-/* hide native scrollbar but keep scrolling */
-.scrollbar-hide {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+/* ============================
+   Design System - CSS Custom Properties
+   ============================ */
+:root {
+  /* Typography */
+  --font-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Colors - Updated to match reference */
+  --color-primary: #3b82f6;
+  --color-primary-dark: #2563eb;
+  --color-accent: #10b981;
+  --color-surface: #ffffff;
+  --color-surface-elevated: #f8fafc;
+  --color-background: #f3f4f6;
+  --color-border: #e5e7eb;
+  --color-text: #000000;
+  --color-text-muted: #6b7280;
+
+  /* Blue Glow Effect */
+  --glow-blue: 0 0 60px 10px rgba(59, 130, 246, 0.15),
+    0 0 100px 40px rgba(59, 130, 246, 0.08);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 350ms ease;
+
+  /* Scrollbar */
+  --scrollbar-width: 8px;
+  --scrollbar-track: #f1f5f9;
+  --scrollbar-thumb: #94a3b8;
+  --scrollbar-thumb-hover: #64748b;
 }
+
+/* Apply font globally */
+*,
+*::before,
+*::after {
+  font-family: var(--font-primary) !important;
+}
+
+html,
+body {
+  font-family: var(--font-primary) !important;
+  background-color: var(--color-background);
+}
+
+/* ============================
+   Gallery Component Styles
+   ============================ */
+.gallery-container {
+  width: 100%;
+  position: relative;
+}
+
+.gallery-header {
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+.gallery-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  /* Simple text - no pill background like reference */
+}
+
+.gallery-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Navigation Arrows */
+.gallery-nav {
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  opacity: 0;
+  color: var(--color-text);
+}
+
+.gallery-wrapper:hover .gallery-nav {
+  opacity: 1;
+}
+
+.gallery-nav:hover {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+  transform: scale(1.1);
+}
+
+.gallery-nav:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  opacity: 1;
+}
+
+.gallery-nav-left {
+  left: 0.75rem;
+}
+
+.gallery-nav-right {
+  right: 0.75rem;
+}
+
+/* Scrollable Container */
+.gallery-scroll {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 0.5rem;
+  margin: -0.5rem;
+  border-radius: 1rem;
+
+  /* Visible Scrollbar Styling */
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+/* Webkit Scrollbar (Chrome, Safari, Edge) */
+.gallery-scroll::-webkit-scrollbar {
+  height: var(--scrollbar-width);
+}
+
+.gallery-scroll::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-radius: 9999px;
+  margin: 0 0.5rem;
+}
+
+.gallery-scroll::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 9999px;
+  border: 2px solid var(--scrollbar-track);
+}
+
+.gallery-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+.gallery-scroll:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Gallery Slides */
+.gallery-slide {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+@media (min-width: 640px) {
+  .gallery-slide {
+    width: 85%;
+    max-width: 500px;
+  }
+}
+
+.gallery-slide:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.gallery-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+  display: block;
+  background: var(--color-surface-elevated);
+}
+
+/* Scroll Indicator Dots */
+.gallery-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.gallery-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--color-border);
+  transition: background var(--transition-fast);
+}
+
+/* ============================
+   Project Card Enhancements
+   ============================ */
+.project-card {
+  background: var(--color-surface);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: var(--glow-blue);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 80px 15px rgba(59, 130, 246, 0.2),
+    0 0 120px 50px rgba(59, 130, 246, 0.1);
+}
+
+.project-card-content {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .project-card-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+}
+
+.project-gallery-section {
+  padding: 1.5rem;
+  background: var(--color-surface-elevated);
+}
+
+/* Buttons container under gallery */
+.project-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+/* Project buttons - light grey style like reference */
+.btn-project {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  background: #f3f4f6;
+  color: #000000;
+  border-radius: 9999px;
+  font-weight: 400;
+  font-size: 1rem;
+  border: 1px solid #e5e7eb;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.btn-project:hover {
+  background: #e5e7eb;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.project-info-section {
+  padding: 1.5rem 1.5rem 2rem;
+}
+
+@media (min-width: 1024px) {
+  .project-info-section {
+    padding: 2rem 2rem 2rem 0;
+  }
+}
+
+/* ============================
+   Button Enhancements
+   ============================ */
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  background: #000000;
+  color: #ffffff;
+  border-radius: 9999px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  border: 2px solid #000000;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.btn-link:hover {
+  background: #1f2937;
+  border-color: #1f2937;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Outlined button variant */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  background: #ffffff;
+  color: #000000;
+  border-radius: 9999px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  border: 2px solid #000000;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.btn-outline:hover {
+  background: #000000;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ============================
+   Tech Badge Enhancements
+   ============================ */
+.tech-badge {
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  background: #000000;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 9999px;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.tech-badge:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-md);
+}
+
+/* ============================
+   Utility - Hide Scrollbar
+   ============================ */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 .scrollbar-hide::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none;
 }
