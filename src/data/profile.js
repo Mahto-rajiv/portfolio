@@ -14,7 +14,7 @@ export const profile = {
         github: 'https://github.com/Mahto-rajiv/',
         linkedin: 'https://www.linkedin.com/in/rajiv-mahto-b928bb253/',
         twitter: 'https://x.com/RajivKu90640484',
-        instagram: 'https://www.instagram.com/rajiv_0509/',
+        instagram: 'https://www.instagram.com/rajivmahto_/',
         facebook: 'https://www.facebook.com/dev.rajiv.mahto/',
         whatsapp: 'https://wa.me/+916355656614',
     },
