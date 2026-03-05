@@ -1,16 +1,88 @@
-# React + Vite
+# Rajiv Mahto — Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive portfolio website built with React 19, Vite 7, and Tailwind CSS v4. Features a **MUI-style theme system** with dark/light mode, scroll animations, and a clean component architecture.
 
-Currently, two official plugins are available:
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind-v4-38bdf8?logo=tailwindcss&logoColor=white)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+- **Dark / Light Mode** — MUI-inspired theme system with `ThemeProvider` context, persisted via `localStorage`, respects `prefers-color-scheme`
+- **Scroll Animations** — Fade-up, slide-in reveals powered by Framer Motion
+- **Sticky Navbar** — Glass-morphism backdrop-blur navigation
+- **Responsive Design** — Mobile-first, fully responsive on all devices
+- **SEO Optimized** — JSON-LD structured data, Open Graph, Twitter Cards, sitemap, canonical URLs
+- **Performance** — Lazy-loaded below-fold sections with React `Suspense`
+- **Accessible** — `aria-label`, `aria-expanded`, `rel="noopener noreferrer"` on all applicable elements
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠 Tech Stack
 
-## Expanding the ESLint configuration
+| Category | Technologies |
+|---|---|
+| **Frontend** | React 19, Vite 7, Tailwind CSS v4 |
+| **Animations** | Framer Motion |
+| **Icons** | Lucide React, React Icons |
+| **Deployment** | Vercel |
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📁 Project Structure
+
+```
+src/
+├── components/          # UI components
+│   ├── common/          # Reusable (ErrorBoundary, SectionHeader, etc.)
+│   ├── sections/        # Page sections (Hero, About, Skills, ...)
+│   └── cards/           # Card components (ProjectCard, ImageGallery)
+├── context/             # ThemeContext (dark/light mode)
+├── data/                # Static data (profile, projects, skills, etc.)
+├── hooks/               # Custom hooks (useScrollSpy)
+├── styles/              # CSS + MUI-style theme config
+│   ├── index.css
+│   └── theme.js
+├── utils/               # Utility functions
+├── App.jsx              # Root with ThemeProvider + ErrorBoundary
+└── main.jsx             # Entry point
+```
+
+## 🚀 Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Start dev server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## 🎨 Theme Configuration
+
+The theme system is modeled after Material UI's `createTheme()` API. Edit `src/styles/theme.js` to customize colors, typography, shadows, and transitions:
+
+```js
+export const theme = {
+  palette: {
+    light: {
+      background: { default: '#f3f4f6', paper: '#ffffff' },
+      text: { primary: '#111827', secondary: '#4b5563' },
+      primary: { main: '#3b82f6' },
+      // ...
+    },
+    dark: {
+      background: { default: '#0f172a', paper: '#1e293b' },
+      text: { primary: '#f1f5f9', secondary: '#cbd5e1' },
+      primary: { main: '#60a5fa' },
+      // ...
+    }
+  }
+};
+```
+
+## 📄 License
+
+© Rajiv Mahto. All rights reserved.

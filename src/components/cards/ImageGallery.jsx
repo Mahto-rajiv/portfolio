@@ -1,4 +1,4 @@
-import React, { useRef, useCallback, useState, useEffect } from 'react';
+import { useRef, useCallback, useState, useEffect } from 'react';
 
 // Helper function to convert image filename to display label
 const getImageLabel = (imageName) => {
