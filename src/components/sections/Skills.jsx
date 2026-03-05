@@ -11,7 +11,7 @@ const skillCategories = [
 ];
 
 const Skills = () => (
-    <section id="skills" className="py-16 px-4">
+    <section id="skills" className="py-16 section-padding">
         <div className="max-w-6xl mx-auto">
             <SectionHeader subtitle="Explore My" title="Skills" />
 

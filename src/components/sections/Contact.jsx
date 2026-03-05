@@ -36,7 +36,7 @@ const contactLinks = [
 ];
 
 const Contact = () => (
-    <section id="contact" className="py-16 px-4">
+    <section id="contact" className="py-16 section-padding">
         <div className="max-w-6xl mx-auto">
             <SectionHeader subtitle="Get in Touch" title="Contact Me" />
 

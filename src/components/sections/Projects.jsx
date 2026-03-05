@@ -4,7 +4,7 @@ import ProjectCard from '../cards/ProjectCard';
 import { projects } from '../../data/projects';
 
 const Projects = () => (
-    <section id="projects" className="py-16 px-4">
+    <section id="projects" className="py-16 section-padding">
         <div className="max-w-7xl mx-auto">
             <SectionHeader subtitle="Browse My Recent" title="Projects" />
 

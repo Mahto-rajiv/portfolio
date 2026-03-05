@@ -22,7 +22,7 @@ const educationData = [
 const Education = () => (
     <section
         id="education"
-        className="py-12 md:py-16 px-4"
+        className="py-12 md:py-16 section-padding"
         style={{ background: 'var(--palette-background-paper)' }}
     >
         <div className="max-w-4xl mx-auto">

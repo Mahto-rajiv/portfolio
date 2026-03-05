@@ -2,7 +2,7 @@ import { profile } from '../../data/profile';
 
 const Footer = () => (
     <footer
-        className="py-8 px-4"
+        className="py-8 section-padding"
         style={{
             background: 'var(--palette-background-paper)',
             borderTop: '1px solid var(--palette-divider)',

@@ -40,7 +40,7 @@ const renderHighlight = (text) => {
 const Experience = () => (
     <section
         id="experience"
-        className="py-16 px-4"
+        className="py-16 section-padding"
         style={{ background: 'var(--palette-background-paper)' }}
     >
         <div className="max-w-7xl mx-auto">

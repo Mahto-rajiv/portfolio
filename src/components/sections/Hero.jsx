@@ -3,7 +3,7 @@ import { Github, Linkedin } from 'lucide-react';
 import { profile } from '../../data/profile';
 
 const Hero = () => (
-    <section id="profile" className="pt-28 pb-16 px-4">
+    <section id="profile" className="pt-28 pb-16 section-padding">
         <div className="max-w-4xl mx-auto text-center">
             <motion.p
                 className="mb-2"
