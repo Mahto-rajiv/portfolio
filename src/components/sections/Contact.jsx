@@ -59,7 +59,7 @@ const Contact = () => (
                             target={link.external ? '_blank' : undefined}
                             rel={link.external ? 'noopener noreferrer' : undefined}
                             aria-label={link.ariaLabel}
-                            className="w-full max-w-sm inline-flex items-center gap-3 px-6 py-5 rounded-2xl border transition-all hover:-translate-y-0.5"
+                            className="w-full max-w-sm inline-flex items-center gap-3 px-5 sm:px-6 py-5 rounded-2xl border transition-all hover:-translate-y-0.5 overflow-hidden"
                             style={{
                                 background: 'var(--palette-background-elevated)',
                                 borderColor: 'var(--palette-card-border)',
@@ -80,7 +80,7 @@ const Contact = () => (
                                 <link.icon className="w-5 h-5" />
                             </span>
                             <span
-                                className="font-medium"
+                                className="font-medium min-w-0 break-all text-sm sm:text-base"
                                 style={{ color: 'var(--palette-text-secondary)' }}
                             >
                                 {link.label}
