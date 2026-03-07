@@ -18,6 +18,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 html,
@@ -26,6 +27,7 @@ body {
   background-color: var(--palette-background-default);
   color: var(--palette-text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
 }
 
 /* ============================
@@ -56,6 +58,7 @@ body {
 .gallery-container {
   width: 100%;
   position: relative;
+  overflow: hidden;
 }
 
 .gallery-header {
@@ -129,9 +132,9 @@ body {
   overflow-x: auto;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
-  padding: 0.5rem;
-  margin: -0.5rem;
+  padding: 0.5rem 0;
   border-radius: var(--radius);
+  -webkit-overflow-scrolling: touch;
 
   scrollbar-width: thin;
   scrollbar-color: var(--palette-text-muted) var(--palette-background-elevated);
@@ -242,6 +245,7 @@ body {
 .project-gallery-section {
   padding: 1.5rem;
   background: var(--palette-background-elevated);
+  overflow: hidden;
 }
 
 /* Buttons container under gallery */
