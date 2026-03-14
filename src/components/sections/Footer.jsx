@@ -22,7 +22,7 @@ const Footer = () => (
                 ))}
             </div>
             <p style={{ color: 'var(--palette-text-muted)' }}>
-                Copyright © {new Date().getFullYear()} {profile.name}. All Rights Reserved.
+                Copyright © 2025 {profile.name}. All Rights Reserved.
             </p>
         </div>
     </footer>

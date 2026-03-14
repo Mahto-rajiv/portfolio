@@ -4,94 +4,98 @@
  * Modeled after Material UI's createTheme() — a centralized config object
  * with palette, typography, shadows, shape, and transitions.
  * ThemeContext reads this and maps tokens → CSS custom properties on :root.
+ *
+ * Palette: Violet + Cyan — bold, premium, distinctive.
  */
 
 export const theme = {
     palette: {
         light: {
             background: {
-                default: '#f3f4f6',
+                default: '#f5f3ff',
                 paper: '#ffffff',
-                elevated: '#f8fafc',
+                elevated: '#f0edff',
             },
             text: {
-                primary: '#111827',
-                secondary: '#4b5563',
-                muted: '#6b7280',
+                primary: '#1e1b4b',
+                secondary: '#4c4578',
+                muted: '#7c7499',
                 inverse: '#ffffff',
             },
             primary: {
-                main: '#3b82f6',
-                dark: '#2563eb',
-                light: '#93bbfd',
+                main: '#7c3aed',
+                dark: '#6d28d9',
+                light: '#c4b5fd',
                 contrastText: '#ffffff',
             },
             accent: {
-                main: '#10b981',
+                main: '#06b6d4',
+                light: '#a5f3fc',
             },
-            divider: '#e5e7eb',
+            divider: '#e5e1f5',
             action: {
-                hover: '#f3f4f6',
-                selected: '#e5e7eb',
+                hover: '#f0edff',
+                selected: '#e5e1f5',
             },
             card: {
                 background: '#ffffff',
-                border: '#e5e7eb',
-                shadow: '0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.07)',
-                hoverShadow: '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
+                border: '#e5e1f5',
+                shadow: '0 4px 6px -1px rgb(124 58 237 / 0.06), 0 2px 4px -2px rgb(124 58 237 / 0.06)',
+                hoverShadow: '0 20px 25px -5px rgb(124 58 237 / 0.12), 0 8px 10px -6px rgb(124 58 237 / 0.08)',
             },
             nav: {
-                background: 'rgba(255, 255, 255, 0.8)',
-                border: 'rgba(229, 231, 235, 0.6)',
+                background: 'rgba(255, 255, 255, 0.85)',
+                border: 'rgba(229, 225, 245, 0.6)',
             },
             badge: {
-                background: '#111827',
+                background: '#1e1b4b',
                 text: '#ffffff',
             },
-            glow: '0 0 60px 10px rgba(59, 130, 246, 0.12), 0 0 100px 40px rgba(59, 130, 246, 0.06)',
+            glow: '0 0 60px 10px rgba(124, 58, 237, 0.12), 0 0 100px 40px rgba(6, 182, 212, 0.06)',
         },
 
         dark: {
             background: {
-                default: '#0f172a',
-                paper: '#1e293b',
-                elevated: '#334155',
+                default: '#0c0a1d',
+                paper: '#161330',
+                elevated: '#221e42',
             },
             text: {
-                primary: '#f1f5f9',
-                secondary: '#cbd5e1',
-                muted: '#94a3b8',
-                inverse: '#0f172a',
+                primary: '#f1f0ff',
+                secondary: '#e2e0fb',
+                muted: '#a9a4d1',
+                inverse: '#0c0a1d',
             },
             primary: {
-                main: '#60a5fa',
-                dark: '#3b82f6',
-                light: '#93bbfd',
-                contrastText: '#0f172a',
+                main: '#a78bfa',
+                dark: '#7c3aed',
+                light: '#c4b5fd',
+                contrastText: '#0c0a1d',
             },
             accent: {
-                main: '#34d399',
+                main: '#22d3ee',
+                light: '#67e8f9',
             },
-            divider: '#334155',
+            divider: '#2e2952',
             action: {
-                hover: '#1e293b',
-                selected: '#334155',
+                hover: '#1c1838',
+                selected: '#2e2952',
             },
             card: {
-                background: '#1e293b',
-                border: '#334155',
-                shadow: '0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3)',
-                hoverShadow: '0 20px 25px -5px rgb(0 0 0 / 0.4), 0 8px 10px -6px rgb(0 0 0 / 0.4)',
+                background: '#161330',
+                border: '#2e2952',
+                shadow: '0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.4)',
+                hoverShadow: '0 20px 25px -5px rgb(167 139 250 / 0.15), 0 8px 10px -6px rgb(34 211 238 / 0.1)',
             },
             nav: {
-                background: 'rgba(15, 23, 42, 0.85)',
-                border: 'rgba(51, 65, 85, 0.6)',
+                background: 'rgba(12, 10, 29, 0.88)',
+                border: 'rgba(46, 41, 82, 0.6)',
             },
             badge: {
-                background: '#e2e8f0',
-                text: '#0f172a',
+                background: '#e2e0ff',
+                text: '#0c0a1d',
             },
-            glow: '0 0 60px 10px rgba(96, 165, 250, 0.15), 0 0 100px 40px rgba(96, 165, 250, 0.08)',
+            glow: '0 0 60px 10px rgba(167, 139, 250, 0.18), 0 0 100px 40px rgba(34, 211, 238, 0.08)',
         },
     },
 

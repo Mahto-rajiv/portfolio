@@ -1,13 +1,13 @@
 import { useState, useMemo, Suspense, lazy } from 'react';
 import Navbar from './sections/Navbar';
 import Hero from './sections/Hero';
-import About from './sections/About';
 import SkillsSection from './sections/Skills';
 import { useScrollSpy } from '../hooks/useScrollSpy';
 
-// Lazy load below-fold sections for faster initial load
-const ExperienceSection = lazy(() => import('./sections/Experience'));
+// Lazy load below-fold sections
 const ProjectsSection = lazy(() => import('./sections/Projects'));
+const ExperienceSection = lazy(() => import('./sections/Experience'));
+const EngineeringApproachSection = lazy(() => import('./sections/EngineeringApproach'));
 const EducationSection = lazy(() => import('./sections/Education'));
 const ContactSection = lazy(() => import('./sections/Contact'));
 const FooterSection = lazy(() => import('./sections/Footer'));
@@ -24,7 +24,7 @@ const SectionLoader = () => (
     </div>
 );
 
-const sectionIds = ['profile', 'about', 'skills', 'experience', 'projects', 'education', 'contact'];
+const sectionIds = ['profile', 'skills', 'experience', 'projects', 'approach', 'education', 'contact'];
 
 const Portfolio = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -39,13 +39,10 @@ const Portfolio = () => {
             {/* Navigation */}
             <Navbar activeSection={activeSection} isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
 
-            {/* Hero Section — Above fold, load immediately */}
+            {/* Hero Section */}
             <Hero />
 
-            {/* About Section — Above fold, load immediately */}
-            <About />
-
-            {/* Skills Section — Important, load immediately */}
+            {/* Skills Section */}
             <SkillsSection />
 
             {/* Below-fold sections — Lazy loaded */}
@@ -55,6 +52,10 @@ const Portfolio = () => {
 
             <Suspense fallback={<SectionLoader />}>
                 <ProjectsSection />
+            </Suspense>
+
+            <Suspense fallback={<SectionLoader />}>
+                <EngineeringApproachSection />
             </Suspense>
 
             <Suspense fallback={<SectionLoader />}>

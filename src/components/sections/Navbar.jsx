@@ -45,24 +45,29 @@ const Navbar = ({ activeSection, isMenuOpen, setIsMenuOpen }) => {
                         {profile.navLinks.map((item) => (
                             <a
                                 key={item}
-                                href={`#${item.toLowerCase()}`}
-                                className="transition-colors relative group"
+                                href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
+                                className="nav-link transition-colors relative group"
                                 style={{
                                     color:
-                                        activeSection === item.toLowerCase()
+                                        activeSection === item.toLowerCase().replace(/\s+/g, '-')
                                             ? 'var(--palette-primary-main)'
                                             : 'var(--palette-text-secondary)',
-                                    fontWeight: activeSection === item.toLowerCase() ? 600 : 400,
+                                    fontWeight: activeSection === item.toLowerCase().replace(/\s+/g, '-') ? 600 : 400,
                                 }}
                             >
                                 {item}
+                                {/* Active underline */}
                                 <span
                                     className="absolute -bottom-1 left-0 h-0.5 transition-all duration-300"
                                     style={{
-                                        width: activeSection === item.toLowerCase() ? '100%' : '0%',
+                                        width: activeSection === item.toLowerCase().replace(/\s+/g, '-') ? '100%' : '0%',
                                         background: 'var(--palette-primary-main)',
                                     }}
                                 />
+                                {/* Hover underline — only visible when not active */}
+                                {activeSection !== item.toLowerCase().replace(/\s+/g, '-') && (
+                                    <span className="nav-hover-underline" />
+                                )}
                             </a>
                         ))}
 
@@ -98,7 +103,7 @@ const Navbar = ({ activeSection, isMenuOpen, setIsMenuOpen }) => {
                         {profile.navLinks.map((item) => (
                             <a
                                 key={item}
-                                href={`#${item.toLowerCase()}`}
+                                href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
                                 className="block py-1 transition-colors"
                                 style={{ color: 'var(--palette-text-secondary)' }}
                                 onClick={() => setIsMenuOpen(false)}

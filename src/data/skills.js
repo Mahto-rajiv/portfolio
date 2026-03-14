@@ -1,38 +1,28 @@
-import { SiPython, SiJavascript, SiDjango, SiFastapi, SiHtml5, SiCss3, SiTailwindcss, SiReact, SiMongodb, SiMysql, SiRedis, SiGithub, SiGitlab, SiScrapy, SiN8N, SiDocker, SiPostman } from 'react-icons/si';
-import { FaAws } from 'react-icons/fa6';
+import { SiPython, SiDjango, SiFastapi, SiPostgresql, SiReact, SiTypescript, SiTailwindcss, SiDocker, SiLinux, SiNginx, SiGithub, SiSelenium } from 'react-icons/si';
+import { Bot, Code2, Workflow } from 'lucide-react';
 
 export const skills = {
-  programmingLanguages: [
-    { name: 'Python', icon: SiPython },
-    { name: 'JavaScript', icon: SiJavascript }
-  ],
   backend: [
-    { name: 'Django', icon: SiDjango },
-    { name: 'DRF (Django REST Framework)', icon: SiDjango },
+    { name: 'Python', icon: SiPython },
+    { name: 'Django / DRF', icon: SiDjango },
     { name: 'FastAPI', icon: SiFastapi },
+    { name: 'PostgreSQL', icon: SiPostgresql },
+    { name: 'REST APIs', icon: Code2 },
   ],
   frontend: [
-    { name: 'HTML', icon: SiHtml5 },
-    { name: 'CSS', icon: SiCss3 },
-    { name: 'TailwindCSS', icon: SiTailwindcss },
     { name: 'React', icon: SiReact },
-    { name: 'JavaScript', icon: SiJavascript },
+    { name: 'TypeScript', icon: SiTypescript },
+    { name: 'Tailwind', icon: SiTailwindcss },
   ],
-  databases: [
-    { name: 'MongoDB', icon: SiMongodb },
-    { name: 'MySQL', icon: SiMysql },
-    { name: 'Redis', icon: SiRedis }
-  ],
-  scraping: [
-    { name: 'Scrapy', icon: SiScrapy },
-    { name: 'Browser-Automation', icon: SiN8N },
-    { name: 'REST APIs', icon: SiFastapi },
-  ],
-  tools: [
-    { name: 'GitHub', icon: SiGithub },
-    { name: 'GitLab', icon: SiGitlab },
-    { name: 'AWS', icon: FaAws },
+  infrastructure: [
     { name: 'Docker', icon: SiDocker },
-    { name: 'Postman', icon: SiPostman }
-  ]
+    { name: 'Linux', icon: SiLinux },
+    { name: 'Nginx', icon: SiNginx },
+    { name: 'CI/CD', icon: SiGithub },
+  ],
+  automation: [
+    { name: 'Selenium', icon: SiSelenium },
+    { name: 'Web Automation', icon: Bot },
+    { name: 'Task Automation', icon: Workflow },
+  ],
 };

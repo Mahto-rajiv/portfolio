@@ -1,70 +1,73 @@
 import { motion } from 'framer-motion';
-import { GraduationCap } from 'lucide-react';
 import SectionHeader from '../common/SectionHeader';
 
 const educationData = [
     {
-        emoji: '🎓',
-        school: 'Gujarat University',
+        year: '2021 — 2024',
+        institution: 'Gujarat University',
         degree: 'Bachelor of Computer Applications (BCA)',
-        years: '2021 - 2024',
-        gradient: 'linear-gradient(135deg, var(--palette-primary-light), var(--palette-background-paper))',
+        description: 'Studied core computer science fundamentals — data structures, algorithms, database management, networking, and software engineering principles.',
     },
     {
-        emoji: '🏫',
-        school: 'Raja Ram Vidhya Vihar',
+        year: '2019 — 2021',
+        institution: 'Raja Ram Vidhya Vihar',
         degree: 'Higher Secondary School',
-        years: '2019 - 2021',
-        gradient: 'linear-gradient(135deg, var(--palette-accent-main), var(--palette-background-paper))',
+        description: 'Completed higher secondary education in Commerce. Developed a strong interest in programming and problem solving, which led me to pursue software engineering independently.',
     },
 ];
 
 const Education = () => (
     <section
         id="education"
-        className="py-12 md:py-16 section-padding"
+        className="py-16 section-padding"
         style={{ background: 'var(--palette-background-paper)' }}
     >
-        <div className="max-w-4xl mx-auto">
-            <SectionHeader
-                title={
-                    <span className="flex items-center justify-center gap-2 md:gap-3">
-                        Education Journey <GraduationCap className="w-7 h-7 md:w-10 md:h-10" />
-                    </span>
-                }
-            />
+        <div className="max-w-3xl mx-auto">
+            <SectionHeader subtitle="Learning Path" title="Education Journey" />
 
-            <div className="space-y-6 md:space-y-8">
+            {/* Timeline */}
+            <div className="timeline-container">
                 {educationData.map((edu, index) => (
                     <motion.div
-                        key={edu.school}
-                        className="rounded-2xl p-5 md:p-8"
-                        style={{
-                            background: edu.gradient,
-                            boxShadow: 'var(--palette-card-shadow)',
-                        }}
-                        initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        key={edu.institution}
+                        className="timeline-item"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: index * 0.15 }}
+                        transition={{ duration: 0.5, delay: index * 0.2 }}
                     >
-                        <div className="flex items-start gap-3 md:gap-4">
-                            <div className="text-2xl md:text-4xl">{edu.emoji}</div>
-                            <div>
-                                <h3
-                                    className="text-lg md:text-2xl font-bold mb-2"
-                                    style={{ color: 'var(--palette-text-primary)' }}
-                                >
-                                    {edu.school}
-                                </h3>
-                                <p
-                                    className="text-base md:text-lg mb-2"
-                                    style={{ color: 'var(--palette-text-secondary)' }}
-                                >
-                                    {edu.degree}
-                                </p>
-                                <p style={{ color: 'var(--palette-text-muted)' }}>{edu.years}</p>
-                            </div>
+                        {/* Timeline Node */}
+                        <div className="timeline-node">
+                            <div className="timeline-dot" />
+                            {index < educationData.length - 1 && <div className="timeline-line" />}
+                        </div>
+
+                        {/* Content */}
+                        <div className="timeline-content">
+                            <span
+                                className="text-xs font-semibold tracking-wider uppercase"
+                                style={{ color: 'var(--palette-accent-main)' }}
+                            >
+                                {edu.year}
+                            </span>
+                            <h4
+                                className="text-lg font-bold mt-1"
+                                style={{ color: 'var(--palette-text-primary)' }}
+                            >
+                                {edu.institution}
+                            </h4>
+                            <p
+                                className="text-sm font-medium mt-0.5"
+                                style={{ color: 'var(--palette-text-secondary)' }}
+                            >
+                                {edu.degree}
+                            </p>
+                            <p
+                                className="text-xs mt-2 leading-relaxed"
+                                style={{ color: 'var(--palette-text-muted)' }}
+                            >
+                                {edu.description}
+                            </p>
                         </div>
                     </motion.div>
                 ))}

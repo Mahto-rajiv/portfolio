@@ -38,7 +38,18 @@ const contactLinks = [
 const Contact = () => (
     <section id="contact" className="py-16 section-padding">
         <div className="max-w-6xl mx-auto">
-            <SectionHeader subtitle="Get in Touch" title="Contact Me" />
+            <SectionHeader subtitle="Let's Connect" title="Contact" />
+
+            <motion.p
+                className="text-center text-sm mb-8 max-w-xl mx-auto"
+                style={{ color: 'var(--palette-text-muted)' }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.15 }}
+            >
+                Looking for a backend engineer who ships clean, scalable systems? Let's talk.
+            </motion.p>
 
             <motion.div
                 className="rounded-[20px] p-8 md:p-10"

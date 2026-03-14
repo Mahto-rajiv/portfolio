@@ -44,7 +44,7 @@ const Experience = () => (
         style={{ background: 'var(--palette-background-paper)' }}
     >
         <div className="max-w-7xl mx-auto">
-            <SectionHeader title="Professional Experience" />
+            <SectionHeader subtitle="Building Production Systems" title="Professional Experience" />
 
             <div className="space-y-8">
                 {experiences.map((exp, index) => (

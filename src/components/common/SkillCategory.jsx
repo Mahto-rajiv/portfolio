@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
  */
 const SkillCategory = ({ title, skills, index = 0 }) => (
     <motion.div
-        className="rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow"
+        className="skill-card-glow rounded-2xl p-6"
         style={{
             background: 'var(--palette-card-background)',
             boxShadow: 'var(--palette-card-shadow)',
@@ -26,14 +26,18 @@ const SkillCategory = ({ title, skills, index = 0 }) => (
             {title}
         </h3>
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-3">
             {skills.map((skill) => (
                 <div
                     key={skill.name}
-                    className="flex items-center gap-3 p-3 rounded-lg transition-colors"
+                    className="skill-item flex items-center gap-3 p-3 rounded-xl transition-all duration-200"
                     style={{ background: 'var(--palette-background-elevated)' }}
                 >
-                    <skill.icon size={24} style={{ color: 'var(--palette-text-secondary)' }} />
+                    <skill.icon
+                        size={22}
+                        className="skill-icon transition-all duration-200"
+                        style={{ color: 'var(--palette-text-secondary)' }}
+                    />
                     <span
                         className="font-medium text-sm"
                         style={{ color: 'var(--palette-text-primary)' }}

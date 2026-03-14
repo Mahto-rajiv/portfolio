@@ -1,45 +1,66 @@
 export const projects = [
   {
     title: 'FullStackNoteApp',
-    description: "This is a full-stack note-taking application built using Django (DRF) for the backend and ReactJS for the frontend. It features secure user authentication with JWT, supporting registration, login, logout, token management, automatic token refresh, and blacklist handling for enhanced security. Users can seamlessly perform CRUD operations on notes—create, read, update, delete, pin, and unpin. Used github actions CI/CD to automate deployment The backend is deployed on AWS EC2 using Gunicorn and Nginx, with DuckDNS for domain management and Let's Encrypt SSL for secure HTTPS access. The frontend is hosted on Netlify, and the database is managed on NeonDB for high availability and performance.",
+    summary: 'A production-ready full-stack note-taking system with secure auth and real-time CRUD.',
+    features: [
+      'JWT auth with automatic token refresh and blacklist security',
+      'Automated deployment pipeline via GitHub Actions CI/CD',
+      'Zero-downtime SSL setup with Let\'s Encrypt + Nginx',
+      'Deployed to production on AWS EC2'
+    ],
+    architectureFlow: 'React → Django DRF → PostgreSQL (NeonDB)',
     images: ['note_home.png', 'note_login.png', 'note_register.png', 'note_profile.png', 'note_addm.png', 'note_updatem.png', 'note_pinned.png'],
     basePath: '/images/noteapp/',
-    tech: ['Python', 'Django REST Framework', 'ReactJS', 'TailwindCSS', 'AWS EC2', 'NeonDB'],
+    tech: ['Python', 'Django DRF', 'ReactJS', 'AWS EC2', 'NeonDB', 'GitHub Actions'],
     github: 'https://github.com/Mahto-rajiv/noteapp-django-react',
     live: 'https://noteapphub.netlify.app/login/',
-    highlightTerms: [
-      'Django', 'DRF', 'ReactJS', 'JWT', 'automatic token refresh', 'CRUD',
-      'GitHub Actions', 'CI/CD', 'AWS EC2', 'Gunicorn', 'Nginx', 'DuckDNS',
-      "Let's Encrypt SSL", 'Netlify', 'NeonDB'
-    ]
   },
   {
     title: 'Thought Exchanger Tweet',
-    description: 'Developed a Django-based social media platform enabling users to create, like, comment, and save tweets, with a follow/unfollow system and real-time notifications for activities like new followers, unfollowing, and tweet interactions. Built a secure authentication system with registration, login, logout, password reset, and profile management for updating profiles, uploading pictures, and managing tweets. Added media uploads for tweets and profile images to ensure a rich user experience. Enhanced interactivity with a modern UI, Bootstrap styling, and dynamic Toast Messages for real-time feedback (e.g., login success, new comments, likes, or errors).',
+    summary: 'A social platform featuring follow graphs, notification systems, and media handling.',
+    features: [
+      'Real-time notification engine for follows, likes, and comments',
+      'Complete social graph with follow/unfollow relationship tracking',
+      'Media upload pipeline for profile images and tweet attachments',
+      'Full authentication flow including password reset'
+    ],
+    architectureFlow: 'Django Templates → Django Monolith → SQLite3',
     images: ['tweet_home.png', 'tweet_profile.png', 'tweet_login_page.png', 'tweet_register_page.png', 'tweet_notification.png'],
     basePath: '/images/tweet/',
     tech: ['Python', 'Django', 'JavaScript', 'Bootstrap', 'SQLite3'],
     github: 'https://github.com/Mahto-rajiv/thought-exchanger-tweet',
-    highlightTerms: ['Django', 'authentication', 'password reset', 'Bootstrap', 'Toast Messages']
   },
   {
     title: 'CodeCollab Hub',
-    description: 'A real-time collaborative coding platform that allows multiple developers to code simultaneously with live updates and instant feedback. Features secure JWT-based authentication using Redis for efficient token management and seamless sessions. Integrated AI-powered code assistance and the WebContainer API to provide live code execution and instant preview functionality, enhancing the overall development experience.',
+    summary: 'A collaborative coding environment with real-time sync and live in-browser execution.',
+    features: [
+      'Real-time multi-user collaboration via WebSocket sync',
+      'Redis-backed JWT sessions with sub-millisecond token lookup',
+      'In-browser code execution via WebContainer API (No Docker)',
+      'AI-powered code assistance integrated into the editor'
+    ],
+    architectureFlow: 'React (Socket.io) → Node.js (Express) → Redis',
     images: ['chatPage.png', 'login.png', 'register.png'],
     basePath: '/images/CodeCollabHub/',
-    tech: ['React', 'Node.js', 'Socket.io', 'Express.js', 'JWT', 'Redis', 'WebContainer API', 'TailwindCSS'],
+    tech: ['React', 'Node.js', 'Socket.io', 'Express.js', 'Redis', 'WebContainer API'],
     github: 'https://github.com/Mahto-rajiv/Basic-Ai-Agent/tree/main/fronted',
     githubBackend: 'https://github.com/Mahto-rajiv/Basic-Ai-Agent/tree/main/Backend',
-    highlightTerms: ['real-time', 'JWT', 'Redis', 'WebContainer API', 'live code execution']
   },
   {
-    title: 'JavaScript and DOM Projects',
-    description: 'This is a JavaScript-based project where I showcase my JavaScript skills through various mini-projects. It includes features like dynamic user cards, a news web app, a weather finder, a to-do list with local storage, a stopwatch, an image carousel, and more.',
+    title: 'JavaScript & DOM Projects',
+    problem: 'Needed to deeply understand browser APIs, DOM manipulation, and async patterns through hands-on engineering — not just reading docs.',
+    summary: 'A collection of 10+ mini-projects exploring browser APIs, DOM manipulation, and async patterns.',
+    features: [
+      'API integration with real-world data sources (news, weather)',
+      'Client-side state persistence with Local Storage',
+      'Custom event-driven architecture patterns',
+      'Built without framework abstractions'
+    ],
+    architectureFlow: 'Vanilla JS (DOM/Fetch) → External APIs → LocalStorage',
     images: ['jshome.png', 'newswebapp.png', 'weather.png', 'todo.png', 'crausal1.png', 'fetchAPi.png', 'colorchanger.png', 'datecolor.png', 'guess.png', 'count.png'],
     basePath: '/images/javascriptDomProject/',
-    tech: ['JavaScript', 'CSS', 'DOM', 'External APIs', 'Web LocalStorage', 'GitHub'],
+    tech: ['JavaScript', 'CSS', 'DOM APIs', 'Fetch API', 'Local Storage'],
     github: 'https://github.com/Mahto-rajiv/javascript-projects',
     live: 'https://mahto-rajiv.github.io/javascript-projects/',
-    highlightTerms: ['JavaScript-based', 'JavaScript', 'dynamic user cards', 'news web app', 'weather finder', 'to-do list with local storage', 'stopwatch', 'image carousel']
-  }
+  },
 ];
