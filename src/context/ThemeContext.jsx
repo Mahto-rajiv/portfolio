@@ -34,6 +34,11 @@ function getInitialMode() {
     const stored = localStorage.getItem('theme-mode');
     if (stored === 'dark' || stored === 'light') return stored;
 
+    // Default to 'light' on mobile devices
+    if (window.innerWidth < 768) {
+        return 'light';
+    }
+
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 }
 
