@@ -1,4 +1,23 @@
 User-agent: *
 Allow: /
+Disallow: /404
+Disallow: /*.json$
 
+# Allow major crawlers explicitly
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Sitemap
 Sitemap: https://rajiv-portfolio-dusky.vercel.app/sitemap.xml
